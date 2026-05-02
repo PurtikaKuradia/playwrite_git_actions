@@ -1,0 +1,17 @@
+{
+  "name": "playwright-allure-demo",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "prepare": "node scripts/version.js",
+    "build": "npx playwright install",
+    "test": "npx playwright test --config=playwright.config.js",
+    "coverage": "npx playwright test --config=playwright.config.js --reporter=list",
+    "report": "npx allure generate allure-results --clean -o allure-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "allure-commandline": "^2.24.0",
+    "allure-playwright": "^2.1.0"
+  }
+}
