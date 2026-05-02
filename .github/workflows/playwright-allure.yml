@@ -38,7 +38,9 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Install Playwright browsers
-        run: npm run build
+        uses: microsoft/playwright-github-action@v5
+        with:
+          install-deps: false
 
   test-coverage:
     name: Test coverage
@@ -53,6 +55,10 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         run: npm install
+      - name: Install Playwright browsers
+        uses: microsoft/playwright-github-action@v5
+        with:
+          install-deps: false
       - name: Run Playwright tests
         run: npm run coverage
       - name: Upload allure results
